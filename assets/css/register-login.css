@@ -12,6 +12,7 @@ body {
 
 .desktop {
     width: 100%;
+    max-width: 1500px;
 }
 
 .mobile {
@@ -19,7 +20,7 @@ body {
 }
 
 .card {
-    margin: 50px;
+    margin: 20px;
     padding: 100px 60px;
     width: 550px;
     border-radius: 25px;
@@ -27,6 +28,10 @@ body {
     border: 8px solid var(--ripe-plum);
     box-shadow: 0px 0px 30px 0px #dd00ff;
     background-color: var(--base);
+}
+
+.card-reg {
+    width: 750px;
 }
 
 .card-body {
@@ -51,6 +56,33 @@ body {
     text-align: end;
 }
 
+.grid-header {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    gap: 20px;
+}
+
+.img-header {
+    max-width: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-header img {
+    width: 100%;
+    height: auto;
+}
+
+.grid-header h2 {
+    text-align: center;
+}
+
+.grid-reg {
+    grid-template-columns: 5fr 2fr;
+}
+
 /* Tablet */
 @media screen and (max-width: 1100px) {
     .card {
@@ -58,16 +90,23 @@ body {
         width: 450px;
     }
 
+    .card-reg {
+        width: 550px;
+    }
+    
     .card-body {
         gap: 17px;
     }
-
+    
     h2 {
         font-size: 34px;
         line-height: 51px;
         font-weight: 500;
     }
-
+    
+    .img-header {
+        max-width: 50px;
+    }
 }
 
 /* Mobile */
@@ -93,5 +132,9 @@ body {
 
     .caption, a {
         font-size: 12px;
+    }
+
+    .grid-header {
+        gap: 5px;
     }
 }
