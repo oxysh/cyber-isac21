@@ -10,6 +10,17 @@
     <!-- Style -->
     <link rel="stylesheet" href="assets/css/env.css">
     <link rel="stylesheet" href="assets/css/register-login.css">
+    <style>
+        body {
+            /* height: 100vh; */
+            overflow-y: scroll !important;
+        }
+
+        .card {
+            margin: 100px;
+            /* max-height: 80vh; */
+        }
+    </style>
 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -23,24 +34,33 @@
 
     <div class="card card-reg">
         <div class="card-body">
-            <div class="grid-header">
-                <div class="img-header">
-                    <img src="assets/img/cakrawala.png">
-                </div>
-                <h2>Register Now</h2>
-                <div class="img-header">
-                    <img src="assets/img/cakrawala.png">
-                </div>
+            <h2>Register Now</h2>
+            <!-- Opsi lomba -->
+            <h4>Lomba yang Diikuti</h4>
+            <div class="option">
+                <button class="btn-lavender focus">Poster</button>
+                <button class="btn-lavender focus">Olimpiade</button>
             </div>
+            <!-- Info Tim -->
+            <h4>Info Tim</h4>
             <input type="text" class="form-control" placeholder="Team name">
             <input type="text" class="form-control" placeholder="Team's email address">
             <input type="password" class="form-control" placeholder="Password">
             <input type="password" class="form-control" placeholder="Confirm password">
             <p class="danger-alert caption">Password does not match</p>
-            <!-- <p class="danger-alert caption">Please fill all form</p> -->
-            <div class="grid grid-reg">
+            <!-- Info Peserta -->
+            <h4>Info Peserta</h4>
+            <input type="text" class="form-control" placeholder="Leader Name">
+            <input type="text" class="form-control" placeholder="Member Name">
+            <div class="option">
+                <button class="btn-lavender">Hapus</button>
+                <button class="btn-lavender">Tambah</button>
+            </div>
+
+            <p class="danger-alert caption">Please fill all form</p>
+            <div class="signin-submit">
                 <p class="caption">Already a member? <a href="" class="underline-link">Sign in</a></p>
-                <button class="btn-submit btn-next">Next</button>
+                <button class="btn-lavender">Submit</button>
             </div>
         </div>
     </div>

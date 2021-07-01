@@ -1,5 +1,4 @@
 body {
-    height: 100vh;
     display: flex;
     align-items: center !important;
     justify-content: center !important;
@@ -60,6 +59,10 @@ body {
     text-shadow: 0px 0px 3.5px var(--white);
 }
 
+.card-body h4 {
+    color: var(--grey);
+}
+
 .grid {
     width: 100%;
     display: grid;
@@ -70,31 +73,33 @@ body {
     text-align: end;
 }
 
-.grid-header {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 5fr 1fr;
-    gap: 20px;
-}
-
-.img-header {
-    max-width: 90px;
+.option {
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
-}
-
-.img-header img {
+    gap: 20px;
     width: 100%;
-    height: auto;
 }
 
-.grid-header h2 {
-    text-align: center;
+.btn-lavender {
+    color: var(--white);
+    border: 1px solid var(--lavender-rose);
+    background-color: var(--base);
+    z-index: 1;
+    width: fit-content;
+    justify-content: center;
 }
 
-.grid-reg {
-    grid-template-columns: 5fr 2fr;
+.btn-lavender:hover, .btn-lavender.focus:focus{
+    background-color: var(--lavender-rose);
+    box-shadow: 0px 0px 15px var(--lavender-rose);
+}
+
+.signin-submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
 }
 
 /* Tablet */
