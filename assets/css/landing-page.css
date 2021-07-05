@@ -9,6 +9,14 @@ p {
     line-height: 20px;
 }
 
+.yellow-txt {
+    color: var(--buttercup);
+}
+
+.purple-txt {
+    color: var(--electric-violet);
+}
+
 /* Nav */
 nav {
     display: block;
@@ -48,6 +56,10 @@ nav {
 
 .nav-link:hover, .nav-link:focus {
     text-decoration: none;
+}
+
+#logo-sm {
+    opacity: 0;
 }
 /* Nav end */
 
@@ -111,7 +123,7 @@ nav {
     justify-content: space-around;
     flex-direction: row;
     align-items: flex-start;
-    row-gap: 20px;
+    row-gap: 2rem;
 }
 
 .val-name {
@@ -122,6 +134,11 @@ nav {
     justify-content: center;
 }
 
+.val-name h4 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
 .val-name img {
     width: 100%;
 }
@@ -129,27 +146,35 @@ nav {
 
 /* Competition */
 .competition-lg {
-    padding: 50px 80px;
+    padding: 50px 80px 0px 80px;
 }
 
 .competition-lg h2 {
     padding-left: 80px;
 }
 
+.all h4 {
+    font-size: 18px;
+}
+
 .all {
-    background: url(../img/comp-lg-1.svg) no-repeat center center;
-    background-size: 100% 100%;
     padding: 12vh 20vw 6vh 20vw;
+    gap: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.all.top {
+    background: url(../img/comp-lg-1.svg) no-repeat center center;
+    background-size: 100% 100%;
 }
     
 .slideshow-container {
     position: relative;
 }
 
-.slide {
+.slide-top, .slide-bottom {
     display: none;
 }
 
@@ -195,7 +220,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 10px;
+    gap: 2vh;
 }
 
 .content-1 p, .content-1 h3 {
@@ -204,15 +229,14 @@ nav {
 
 .timeline-1 {
     display: flex;
-    gap: 30px;
+    gap: 10vh;
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
     min-height: 37vh;
-    /* padding-left: 5vw; */
 }
 
-.timeline-1 img {
+.timeline-1 img, .timeline-2 img {
     padding: 0 5vw;
     width: 100%;
 }
@@ -225,18 +249,21 @@ nav {
     gap: 10px;
 }
 
-.page {
+.page-top, .page-bottom {
     cursor: pointer;
-    height: 15px;
-    width: 15px;
+    height: 20px;
+    width: 20px;
+    padding: 0.5rem;
+    color: var(--white);
     border-radius: 0px;
-    border: 1px solid var(--electric-violet);
+    border: 3px solid var(--electric-violet);
     background-color: var(--base);
     transition: background-color 0.6s ease;
 }
 
-.page:hover, .active {
+.page-top:hover, .page-bottom:hover, .active {
     background-color: var(--buttercup);
+    border: 3px solid var(--buttercup);
     box-shadow: 0px 0px 15px var(--buttercup);
 }
 
@@ -248,6 +275,42 @@ nav {
 @keyframes fade {
     from {opacity: .4} 
     to {opacity: 1}
+}
+
+.all.bottom {
+    background: url(../img/comp-lg-2.svg) no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.content-2 {
+    display: grid;
+    min-height: 37vh;
+    grid-template-columns: 5fr 2fr 2fr;
+    gap: 20px;
+}
+
+.content-2 .desc-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 3vh;
+}
+
+.content-2 p, .content-2 h3 {
+    text-align: start;
+}
+
+.timeline-2 {
+    display: flex;
+    gap: 10vh;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 37vh;
+}
+
+.competition-sm {
+    display: none;
 }
 /* Competition end */
 
@@ -332,6 +395,10 @@ nav {
     /* Value ISAC end */
     
     /* Competition */
+    .all {
+        gap: 0;
+    }
+
     .competition-lg {
         padding: 20px 50px;
     }
@@ -372,4 +439,136 @@ nav {
         width: 40vw;
     }
     /* Value ISAC end */
+
+    /* Competition */
+    .competition-lg {
+        display: none;
+    }
+
+    .competition-sm {
+        display: block;
+        padding: 20px;
+    }
+
+    .competition-sm h2 {
+        padding-left: 20px;
+    }
+
+    .competition-sm h3 {
+        font-size: 20px;
+    }
+
+    .competition-sm h4 {
+        font-size: 14px;
+    }
+
+    .competition-sm button {
+        font-size: 12px;
+    }
+
+    .slide-sm-top, .slide-sm-bottom {
+        display: none;
+    }
+    
+    .all-sm.top .content-1 {
+        background: url(../img/comp-sm-11.svg) no-repeat center center;
+        background-size: 100% 100%;
+        width: 385px;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .competition-sm .slide-sm-top, .competition-sm .slide-sm-bottom {
+        display: flex;
+        justify-content: center;
+
+    }
+    
+    .downloads {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+    }
+    
+    .content-1 .desc-box {
+        padding: 30px 80px 0px 30px;
+        gap: 0px;
+    }
+
+    .content-1 .downloads {
+        padding: 0px 30px 0px 100px;
+        gap: 30px;
+    }
+
+    .timeline-sm-1 {
+        background: url(../img/comp-sm-12.svg) no-repeat center center;
+        background-size: 100% 100%;
+        padding: 40px 100px 40px 0;
+        width: 385px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-start;
+        min-height: 37vh;
+    }
+
+    .page-box {
+        height: 0;
+    }
+
+    .page-sm-top, .page-sm-bottom {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        padding: 0rem;
+        color: var(--white);
+        border-radius: 0px;
+        border: 3px solid var(--electric-violet);
+        background-color: var(--base);
+        transition: background-color 0.6s ease;
+    }
+
+    .page-sm-top:hover, .page-sm-bottom:hover, .active {
+        background-color: var(--buttercup);
+        border: 3px solid var(--buttercup);
+        box-shadow: 0px 0px 15px var(--buttercup);
+    }
+
+    .all-sm.bottom .content-2 {
+        background: url(../img/comp-sm-21.svg) no-repeat center center;
+        background-size: 100% 100%;
+        width: 385px;
+        display: grid;
+        grid-template-columns: none;
+        grid-template-rows: 2fr 1fr;
+    }
+
+    .content-2 .desc-box {
+        padding: 30px 30px 0px 80px;
+        gap: 0px;
+    }
+
+    .content-2 .downloads {
+        padding: 0px 100px 0px 30px;
+        gap: 30px;
+    }
+
+    .timeline-sm-2 {
+        background: url(../img/comp-sm-22.svg) no-repeat center center;
+        background-size: 100% 100%;
+        padding: 40px 0px 40px 100px;
+        width: 385px;
+        display: flex !important;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        min-height: 37vh;
+    }
+
+    .all-sm {
+        padding-bottom: 50px;
+    }
+    /* Competition end */
 }

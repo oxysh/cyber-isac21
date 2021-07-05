@@ -2,26 +2,26 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ISAC 2021</title>
 
     <!-- Style -->
-    <link rel="stylesheet" href="assets/css/env.css">
-    <link rel="stylesheet" href="assets/css/landing-page.css">
+    <link rel="stylesheet" href="assets/css/env.css" />
+    <link rel="stylesheet" href="assets/css/landing-page.css" />
 
     <!-- Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@500;600;700&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" />
 </head>
 
 <body>
     <!-- Nav -->
     <nav class="nav">
-        <img src="assets/img/isac-sm.png">
+        <img id="logo-sm" onload="showOnScroll('logo-sm')" src="assets/img/isac-sm.png" alt="ISAC 2021" />
         <div>
             <a href="" class="nav-link">Competition</a>
             <a href="" class="nav-link">Schedule</a>
@@ -61,29 +61,31 @@
     <div class="val-overflow">
         <div class="value">
             <div class="val-name">
-                <h4>Adaptive</h4>
+                <h4>A<span class="purple-txt">·</span>dapt<span class="yellow-txt">·</span>ive</h4>
                 <img src="assets/img/val-adaptive.png" alt="">
-                <p>a·dapt·ive<br>Ability to change in order to suit different conditions</p>
+                <p>Ability to change in order to suit different conditions</p>
             </div>
             <div class="val-name">
-                <h4>Connective</h4>
+                <h4>Con<span class="purple-txt">·</span>nec<span class="yellow-txt">·</span>tive</h4>
                 <img src="assets/img/val-connective.png" alt="">
-                <p>con·nec·tive<br>breaking the wall of separation and assemble a wide range of individuals/</p>
+                <p>Breaking the wall of separation and assemble a wide range of individuals/</p>
             </div>
             <div class="val-name">
-                <h4>Pioneer</h4>
+                <h4>Pi<span class="purple-txt">·</span>o<span class="yellow-txt">·</span>neer</h4>
                 <img src="assets/img/val-pioneer.png" alt="">
-                <p>pi·o·neer<br>to be the one who willing to innovate</p>
+                <p>To be the one who willing to innovate</p>
             </div>
             <div class="val-name">
-                <h4>Innovative</h4>
+                <h4>In<span class="purple-txt">·</span>no<span class="yellow-txt">·</span>va<span
+                        class="purple-txt">·</span>tive</h4>
                 <img src="assets/img/val-innovative.png" alt="">
-                <p>in·no·va·tive<br>Initiate an unexplored solution to help solving a problem</p>
+                <p>Initiate an unexplored solution to help solving a problem</p>
             </div>
             <div class="val-name">
-                <h4>Beneficial</h4>
+                <h4>Ben<span class="purple-txt">·</span>e<span class="yellow-txt">·</span>fi<span
+                        class="purple-txt">·</span>cial</h4>
                 <img src="assets/img/val-benefical.png" alt="">
-                <p>ben·e·fi·cial<br>bestow a good ouput upon society</p>
+                <p>Bestow a good ouput upon society</p>
             </div>
         </div>
     </div>
@@ -92,9 +94,9 @@
     <!-- Competition -->
     <div class="competition-lg">
         <h2 class="gradient">COMPETITION</h2>
-        <div class="all">
+        <div class="all top">
             <div class="slideshow-container">
-                <div class="slide fade ">
+                <div class="slide-top fade ">
                     <div class="content-1">
                         <div class="download-box soal">
                             <h4>LATIHAN SOAL</h4>
@@ -107,71 +109,163 @@
                             <button class="btn-submit focus">Download</button>
                         </div>
                         <div class="desc-box">
-                            <h3>Poster</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, obcaecati suscipit.
-                                Laborum tempora id perferendis accusantium modi! Non nisi eum illo magnam neque vero
-                                sequi totam soluta ducimus, nesciunt quasi molestias, dolore inventore nihil eveniet.
-                                Culpa odio neque vel. Inventore in impedit, nisi tempore quis officiis nam eveniet
-                                perferendis amet.</p>
+                            <h3>Creative Poster</h3>
+                            <p>ISAC Creative Poster adalah kompetisi yang menguji kreativitas peserta dalam menghadirkan
+                                sebuah informasi dalam bentuk poster. Kompetisi ini bertujuan untuk mengasah kemampuan
+                                peserta dalam menyelesaikan sebuah masalah dan memberikan informasi dalam wujud poster.
+                                Masalah yang akan diberikan melalui study case dengan tema besar Pursuing Innovation:
+                                Digital Transformation for Society 5.0. ISAC Creative Poster diselenggarakan secara
+                                online dengan skala nasional untuk seluruh siswa.</p>
                         </div>
                     </div>
                 </div>
-                <div class="slide fade">
+                <div class="slide-top fade">
                     <div class="timeline-1">
-                        <h3>Timeline</h3>
+                        <h3>Timeline Creative Poster</h3>
                         <img src="assets/img/timeline-1.png" alt="">
                     </div>
                 </div>
             </div>
             <div class="page-box">
-                <span class="page" onclick="currentSlide(1)"></span>
-                <span class="page" onclick="currentSlide(2)"></span>
+                <span class="page-top" onclick="currentSlide(1)"></span>
+                <span class="page-top" onclick="currentSlide(2)"></span>
+            </div>
+        </div>
+        <div class="all bottom">
+            <div class="slideshow-container">
+                <div class="slide-bottom fade ">
+                    <div class="content-2">
+                        <div class="desc-box">
+                            <h3>ISAC Olympiad</h3>
+                            <p>ISAC Olympiad adalah kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
+                                sistem informasi dasar untuk menyesuaikan masalah yang ada. Kompetisi ini bertujuan
+                                untuk mengasah kemampuan logika dan pemrograman peserta serta memperkenalkan ilmu sistem
+                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem kepada peserta. ISAC
+                                Olympiad diselenggarakan secara online dengan skala nesional untuk seluruh siswa SMA
+                                atau sederajat.</p>
+                        </div>
+                        <div class="download-box guide">
+                            <h4>GUIDE BOOK</h4>
+                            <img src="assets/img/file.png" alt="">
+                            <button class="btn-submit focus">Download</button>
+                        </div>
+                        <div class="download-box soal">
+                            <h4>LATIHAN SOAL</h4>
+                            <img src="assets/img/file.png" alt="">
+                            <button class="btn-submit focus">Download</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-bottom fade">
+                    <div class="timeline-2">
+                        <h3>Timeline Olympiad</h3>
+                        <img src="assets/img/timeline-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="page-box">
+                <span class="page-bottom" onclick="currentSlidee(1)"></span>
+                <span class="page-bottom" onclick="currentSlidee(2)"></span>
             </div>
         </div>
     </div>
-
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("slide");
-            var dots = document.getElementsByClassName("page");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
-    <!-- Competition end -->
-
-    <!-- Timeline -->
-    <!-- <div class="divider square">
-        <div class="timeline">
-            <h2 class="gradient">TIMELINE</h2>
+    <!-- ------------------------------------- -->
+    <div class="competition-sm">
+        <h2 class="gradient">COMPETITION</h2>
+        <div class="all-sm top">
+            <div class="slideshow-container">
+                <div class="slide-sm-top fade">
+                    <div class="content-1">
+                        <div class="desc-box">
+                            <h3>Creative Poster</h3>
+                            <p>ISAC Creative Poster adalah kompetisi yang menguji kreativitas peserta dalam menghadirkan
+                                sebuah informasi dalam bentuk poster. Kompetisi ini bertujuan untuk mengasah kemampuan
+                                peserta dalam menyelesaikan sebuah masalah dan memberikan informasi dalam wujud poster.
+                                Masalah yang akan diberikan melalui study case dengan tema besar Pursuing Innovation:
+                                Digital Transformation for Society 5.0. ISAC Creative Poster diselenggarakan secara
+                                online dengan skala nasional untuk seluruh siswa.</p>
+                        </div>
+                        <div class="downloads">
+                            <div class="download-box guide">
+                                <h4>GUIDE BOOK</h4>
+                                <img src="assets/img/file.png" alt="">
+                                <button class="btn-submit focus">Download</button>
+                            </div>
+                            <div class="download-box soal">
+                                <h4>LATIHAN SOAL</h4>
+                                <img src="assets/img/file.png" alt="">
+                                <button class="btn-submit focus">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-sm-top fade">
+                    <div class="timeline-sm-1">
+                        <h3>Timeline Creative Poster</h3>
+                        <img src="assets/img/timeline-sm-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="page-box">
+                <span class="page-sm-top" onclick="currentSlideSm(1)"></span>
+                <span class="page-sm-top" onclick="currentSlideSm(2)"></span>
+            </div>
         </div>
-        <div>
-            <img src="assets/img/square.png">
+
+        <div class="all-sm bottom">
+            <div class="slideshow-container">
+                <div class="slide-sm-bottom fade">
+                    <div class="content-2">
+                        <div class="desc-box">
+                            <h3>Olympiad</h3>
+                            <p>ISAC Olympiad adalah kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
+                                sistem informasi dasar untuk menyesuaikan masalah yang ada. Kompetisi ini bertujuan
+                                untuk mengasah kemampuan logika dan pemrograman peserta serta memperkenalkan ilmu sistem
+                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem kepada peserta. ISAC
+                                Olympiad diselenggarakan secara online dengan skala nesional untuk seluruh siswa SMA
+                                atau sederajat.</p>
+                        </div>
+                        <div class="downloads">
+                            <div class="download-box guide">
+                                <h4>GUIDE BOOK</h4>
+                                <img src="assets/img/file.png" alt="">
+                                <button class="btn-submit focus">Download</button>
+                            </div>
+                            <div class="download-box soal">
+                                <h4>LATIHAN SOAL</h4>
+                                <img src="assets/img/file.png" alt="">
+                                <button class="btn-submit focus">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide-sm-bottom fade">
+                    <div class="timeline-sm-2">
+                        <h3>Timeline Olympiad</h3>
+                        <img src="assets/img/timeline-sm-1.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="page-box">
+                <span class="page-sm-bottom" onclick="currentSlideeSm(1)"></span>
+                <span class="page-sm-bottom" onclick="currentSlideeSm(2)"></span>
+            </div>
         </div>
     </div>
-
-    <div class="tl-line-container">
-        <div class="tl-line right">
+    <!-- Competition end -->
+    <div style="height: 100px;"></div>
+    <!-- Timeline -->
+    <!-- <div class="divider square">
+                <div class="timeline">
+                    <h2 class="gradient">TIMELINE</h2>
+                </div>
+                <div>
+                    <img src="assets/img/square.png">
+                </div>
+            </div>
+            
+            <div class="tl-line-container">
+                <div class="tl-line right">
             <div>
             </div>
             <div>
@@ -237,6 +331,8 @@
 
     <!-- Footer -->
     <!-- Footer end -->
+
+    <script src="assets/js/script.js"></script>
 </body>
 
 </html>
