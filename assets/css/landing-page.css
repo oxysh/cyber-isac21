@@ -14,7 +14,7 @@ p {
 }
 
 .purple-txt {
-    color: var(--electric-violet);
+    color: var(--lavender-rose);
 }
 
 /* Nav */
@@ -35,12 +35,13 @@ nav {
     list-style: none;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--base);
+    background-color: #0000227c;
+    backdrop-filter: blur(12px);
 }
 
 .btn-login {
     width: fit-content;
-    padding: 10px 15px;
+    padding: 0.5rem 1rem;
     text-decoration: solid;
     
     border: 2px solid var(--electric-violet);
@@ -158,15 +159,15 @@ nav {
 }
 
 .all {
-    padding: 12vh 20vw 6vh 20vw;
-    gap: 10vh;
+    padding: 6vh 20vw 6vh 20vw;
+    gap: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .all.top {
-    background: url(../img/comp-lg-1.svg) no-repeat center center;
+    background: url('../img/comp-lg-1.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
     background-size: 100% 100%;
 }
     
@@ -216,6 +217,20 @@ nav {
     padding-top: 100px;
 }
 
+.desc-label {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.desc-label p {
+    /* border: 1px solid var(--buttercup); */
+    padding: 0.1rem 0.5rem;
+    border-bottom: 1px solid var(--buttercup);
+    /* border-radius: 0.5rem; */
+    font-size: 12px;
+}
+
 .content-1 .desc-box {
     display: flex;
     flex-direction: column;
@@ -251,8 +266,8 @@ nav {
 
 .page-top, .page-bottom {
     cursor: pointer;
-    height: 20px;
-    width: 20px;
+    height: 1.5rem;
+    width: 1.5rem;
     padding: 0.5rem;
     color: var(--white);
     border-radius: 0px;
@@ -278,12 +293,13 @@ nav {
 }
 
 .all.bottom {
-    background: url(../img/comp-lg-2.svg) no-repeat center center;
+    background: url('../img/comp-lg-2.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
     background-size: 100% 100%;
 }
 
 .content-2 {
     display: grid;
+    padding: 1.5rem;
     min-height: 37vh;
     grid-template-columns: 5fr 2fr 2fr;
     gap: 20px;
@@ -414,7 +430,15 @@ nav {
 }
 
 /* Mobile */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
+    .box {
+        width: 75vw;
+    }
+
+    .nav-link-group {
+        display: none;
+    }
+
     /* Deskripsi ISAC */
     .desc-container {
         padding: 0px 50px 30px 50px;
@@ -422,16 +446,24 @@ nav {
     /* Deskripsi ISAC end */
     
     /* Value ISAC */
+    .val-name h4 {
+        font-weight: 300;
+    }
+
     .val-overflow {
         overflow-x: scroll;
+
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
     }
     
     .val-overflow::-webkit-scrollbar {
-        width: 0px;
+        display: none;
     }
     
     .value {
         padding: 10px 50px;
+        min-width: 1000px;
         width: 300vw;
     }
     
@@ -471,9 +503,10 @@ nav {
     }
     
     .all-sm.top .content-1 {
-        background: url(../img/comp-sm-11.svg) no-repeat center center;
+        background: url('../img/comp-sm-11.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
         background-size: 100% 100%;
-        width: 385px;
+        width: 100%;
+        padding: 1.5rem;
         display: grid;
         grid-template-columns: none;
         grid-template-rows: 2fr 1fr;
@@ -482,46 +515,45 @@ nav {
     .competition-sm .slide-sm-top, .competition-sm .slide-sm-bottom {
         display: flex;
         justify-content: center;
-
     }
     
     .downloads {
         display: flex;
         flex-direction: row;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
+    }
+
+    .download-box {
+        gap:0;
     }
     
     .content-1 .desc-box {
-        padding: 30px 80px 0px 30px;
-        gap: 0px;
+        padding: 0 12vw 0 0;
+        gap: 4px;
     }
 
     .content-1 .downloads {
-        padding: 0px 30px 0px 100px;
+        padding: 0px 0 0px 12vw;
         gap: 30px;
     }
 
     .timeline-sm-1 {
-        background: url(../img/comp-sm-12.svg) no-repeat center center;
+        background: url('../img/comp-sm-12.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
         background-size: 100% 100%;
-        padding: 40px 100px 40px 0;
-        width: 385px;
+        padding: 1.5rem 12vw 3rem 0rem;
+        width: 100%;
         display: flex !important;
         flex-direction: column;
-        align-items: flex-end;
+        align-items: center;
         justify-content: flex-start;
         min-height: 37vh;
     }
 
-    .page-box {
-        height: 0;
-    }
-
     .page-sm-top, .page-sm-bottom {
         cursor: pointer;
-        height: 15px;
-        width: 15px;
+        width: 1.5rem;
+        height: 1.5rem;
         padding: 0rem;
         color: var(--white);
         border-radius: 0px;
@@ -537,32 +569,32 @@ nav {
     }
 
     .all-sm.bottom .content-2 {
-        background: url(../img/comp-sm-21.svg) no-repeat center center;
+        background: url('../img/comp-sm-21.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
         background-size: 100% 100%;
-        width: 385px;
+        width: 100%;
         display: grid;
         grid-template-columns: none;
         grid-template-rows: 2fr 1fr;
     }
 
     .content-2 .desc-box {
-        padding: 30px 30px 0px 80px;
-        gap: 0px;
+        padding: 0 0 0 12vw;
+        gap: 4px;
     }
 
     .content-2 .downloads {
-        padding: 0px 100px 0px 30px;
+        padding: 0 12vw 0 0;
         gap: 30px;
     }
 
     .timeline-sm-2 {
-        background: url(../img/comp-sm-22.svg) no-repeat center center;
+        background: url('../img/comp-sm-22.svg#svgView(preserveAspectRatio(none))') no-repeat center center;
         background-size: 100% 100%;
-        padding: 40px 0px 40px 100px;
-        width: 385px;
+        padding: 1.5rem 0 3rem 12vw;
+        width: 100%;
         display: flex !important;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: flex-start;
         min-height: 37vh;
     }

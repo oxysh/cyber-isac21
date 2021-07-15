@@ -14,16 +14,19 @@
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&family=Poppins:wght@300;500;600;700&display=swap"
         rel="stylesheet" />
+
+    <!-- JQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
     <!-- Nav -->
     <nav class="nav">
-        <img id="logo-sm" onload="showOnScroll('logo-sm')" src="assets/img/isac-sm.png" alt="ISAC 2021" />
-        <div>
-            <a href="" class="nav-link">Competition</a>
+        <img id="logo-sm" src="assets/img/isac-sm.png" onload="showOnScroll('logo-sm')" alt="ISAC 2021" />
+        <div class="nav-link-group">
+            <a href="#competition" class="nav-link">Competition</a>
             <a href="" class="nav-link">Schedule</a>
             <a href="" class="nav-link">About Us</a>
         </div>
@@ -68,7 +71,7 @@
             <div class="val-name">
                 <h4>Con<span class="purple-txt">·</span>nec<span class="yellow-txt">·</span>tive</h4>
                 <img src="assets/img/val-connective.png" alt="">
-                <p>Breaking the wall of separation and assemble a wide range of individuals/</p>
+                <p>Breaking the wall of separation and assemble a wide range of individuals</p>
             </div>
             <div class="val-name">
                 <h4>Pi<span class="purple-txt">·</span>o<span class="yellow-txt">·</span>neer</h4>
@@ -92,7 +95,7 @@
     <!-- Value ISAC end -->
 
     <!-- Competition -->
-    <div class="competition-lg">
+    <div class="competition-lg" id="competition">
         <h2 class="gradient">COMPETITION</h2>
         <div class="all top">
             <div class="slideshow-container">
@@ -110,12 +113,16 @@
                         </div>
                         <div class="desc-box">
                             <h3>Creative Poster</h3>
-                            <p>ISAC Creative Poster adalah kompetisi yang menguji kreativitas peserta dalam menghadirkan
-                                sebuah informasi dalam bentuk poster. Kompetisi ini bertujuan untuk mengasah kemampuan
-                                peserta dalam menyelesaikan sebuah masalah dan memberikan informasi dalam wujud poster.
-                                Masalah yang akan diberikan melalui study case dengan tema besar Pursuing Innovation:
-                                Digital Transformation for Society 5.0. ISAC Creative Poster diselenggarakan secara
-                                online dengan skala nasional untuk seluruh siswa.</p>
+                            <p>Kompetisi yang menguji kreativitas peserta dalam menghadirkan
+                                sebuah informasi dalam bentuk poster. Bertujuan untuk mengasah kemampuan
+                                peserta dalam menyelesaikan sebuah masalah dan mempresentasikannya dalam wujud poster.
+                                Masalah akan diberikan melalui study case dengan tema besar Pursuing Innovation:
+                                Digital Transformation for Society 5.0</p>
+                            <div class="desc-label">
+                                <p>online</p>
+                                <p>nasional</p>
+                                <p>SMA sederajat</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -137,12 +144,15 @@
                     <div class="content-2">
                         <div class="desc-box">
                             <h3>ISAC Olympiad</h3>
-                            <p>ISAC Olympiad adalah kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
-                                sistem informasi dasar untuk menyesuaikan masalah yang ada. Kompetisi ini bertujuan
+                            <p>Kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
+                                sistem informasi dasar untuk menyelesaikan masalah yang ada. Bertujuan
                                 untuk mengasah kemampuan logika dan pemrograman peserta serta memperkenalkan ilmu sistem
-                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem kepada peserta. ISAC
-                                Olympiad diselenggarakan secara online dengan skala nesional untuk seluruh siswa SMA
-                                atau sederajat.</p>
+                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem </p>
+                            <div class="desc-label">
+                                <p>online</p>
+                                <p>nasional</p>
+                                <p>SMA sederajat</p>
+                            </div>
                         </div>
                         <div class="download-box guide">
                             <h4>GUIDE BOOK</h4>
@@ -178,22 +188,26 @@
                     <div class="content-1">
                         <div class="desc-box">
                             <h3>Creative Poster</h3>
-                            <p>ISAC Creative Poster adalah kompetisi yang menguji kreativitas peserta dalam menghadirkan
-                                sebuah informasi dalam bentuk poster. Kompetisi ini bertujuan untuk mengasah kemampuan
-                                peserta dalam menyelesaikan sebuah masalah dan memberikan informasi dalam wujud poster.
-                                Masalah yang akan diberikan melalui study case dengan tema besar Pursuing Innovation:
-                                Digital Transformation for Society 5.0. ISAC Creative Poster diselenggarakan secara
-                                online dengan skala nasional untuk seluruh siswa.</p>
+                            <p>Kompetisi yang menguji kreativitas peserta dalam menghadirkan
+                                sebuah informasi dalam bentuk poster. Bertujuan untuk mengasah kemampuan
+                                peserta dalam menyelesaikan sebuah masalah dan mempresentasikannya dalam wujud poster.
+                                Masalah akan diberikan melalui study case dengan tema besar Pursuing Innovation:
+                                Digital Transformation for Society 5.0</p>
+                            <div class="desc-label">
+                                <p>online</p>
+                                <p>nasional</p>
+                                <p>SMA sederajat</p>
+                            </div>
                         </div>
                         <div class="downloads">
                             <div class="download-box guide">
                                 <h4>GUIDE BOOK</h4>
-                                <img src="assets/img/file.png" alt="">
+                                <!-- <img src="assets/img/file.png" alt=""> -->
                                 <button class="btn-submit focus">Download</button>
                             </div>
                             <div class="download-box soal">
                                 <h4>LATIHAN SOAL</h4>
-                                <img src="assets/img/file.png" alt="">
+                                <!-- <img src="assets/img/file.png" alt=""> -->
                                 <button class="btn-submit focus">Download</button>
                             </div>
                         </div>
@@ -218,22 +232,25 @@
                     <div class="content-2">
                         <div class="desc-box">
                             <h3>Olympiad</h3>
-                            <p>ISAC Olympiad adalah kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
-                                sistem informasi dasar untuk menyesuaikan masalah yang ada. Kompetisi ini bertujuan
+                            <p>Kompetisi yang menguji kemampuan logika, pemrograman dasar, dan ilmu
+                                sistem informasi dasar untuk menyelesaikan masalah yang ada. Bertujuan
                                 untuk mengasah kemampuan logika dan pemrograman peserta serta memperkenalkan ilmu sistem
-                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem kepada peserta. ISAC
-                                Olympiad diselenggarakan secara online dengan skala nesional untuk seluruh siswa SMA
-                                atau sederajat.</p>
+                                informasi dasar tepatnya dalam ranah jaringan, bisnis, dan sistem</p>
+                            <div class="desc-label">
+                                <p>online</p>
+                                <p>nasional</p>
+                                <p>SMA sederajat</p>
+                            </div>
                         </div>
                         <div class="downloads">
                             <div class="download-box guide">
                                 <h4>GUIDE BOOK</h4>
-                                <img src="assets/img/file.png" alt="">
+                                <!-- <img src="assets/img/file.png" alt=""> -->
                                 <button class="btn-submit focus">Download</button>
                             </div>
                             <div class="download-box soal">
                                 <h4>LATIHAN SOAL</h4>
-                                <img src="assets/img/file.png" alt="">
+                                <!-- <img src="assets/img/file.png" alt=""> -->
                                 <button class="btn-submit focus">Download</button>
                             </div>
                         </div>
@@ -331,7 +348,6 @@
 
     <!-- Footer -->
     <!-- Footer end -->
-
     <script src="assets/js/script.js"></script>
 </body>
 
