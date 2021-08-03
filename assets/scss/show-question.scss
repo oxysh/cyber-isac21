@@ -1,0 +1,323 @@
+$copped-red: #CC755A;
+$french-rose: #F13E86;
+$electric-blue: #4BF2FD;
+$mustard: #FDD44B;
+
+@mixin button($color) {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    overflow: hidden;
+    border-radius: 12px;
+    width: fit-content;
+    color: var(--white);
+    border: 0.125rem solid $color;
+    background-color: var(--base);
+    z-index: 1;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &:hover {
+        box-shadow: 0 0 16px $color;
+    }
+}
+
+@mixin move-done($color: var(--buttercup)) {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 14px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow: hidden;
+    border-radius: 12px;
+    width: fit-content;
+    color: var(--base);
+    background-color: $color;
+    z-index: 1;
+    border: none;
+
+    &:hover {
+        box-shadow: 0 0 16px $color;
+    }
+}
+
+@mixin question-def($color) {
+    border-color: $color;
+
+    div.choice {
+        border-left-color: $color;
+        background-color: $color;
+        color: var(--base);
+    }
+
+    &:hover {
+        box-shadow: 0 0 16px $color;
+    }
+}
+
+* {
+    margin: 0 !important;
+}
+
+body {
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h2 {
+        padding: 0%;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .modal-container, .time-sm, #question-img {
+        display: none;
+    }
+    
+    h3 {
+        width: 100%;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: justify;
+        padding-bottom: 10px;
+    }
+
+    #answer {
+        label {
+            padding-bottom: 10px;
+        }
+
+        img {
+            width: 500px;
+        }
+    }
+
+    input[name="unsure"] {
+        visibility: hidden;
+        position: absolute;
+    }
+
+    button.unsure {
+        @include button($copped-red);
+    }
+
+    button#uncheck {
+        @include button($french-rose);
+    }
+    
+    .move {
+        @include move-done();
+    }
+    
+    .done {
+        @include move-done($electric-blue);
+    }
+}
+
+.right {
+    h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    img#question-img {
+        width: 100%;
+    }
+    
+    .question-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        gap: 8px;
+        
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            grid-column: span 5;
+      
+            img {
+                height: 50%;
+            }
+        }
+
+        button {
+            padding: 0;
+            border-radius: 12px;
+            display: flex;
+            border: 2px solid var(--white);
+            background-color: var(--base);
+            color: var(--white);
+            
+            div.choice {
+                border-left: 2px solid var(--white);
+            }
+
+            &:hover {
+                box-shadow: 0 0 16px var(--white);
+            }
+            
+            div {
+                width: 50%;
+                height: 100%;
+                padding: 12px 0;
+            }
+
+            &.unsure {
+                @include question-def($copped-red);
+            }
+
+            &.answered {
+                @include question-def($mustard);
+            }
+
+            &.show {
+                @include question-def(var(--white));
+            }
+        }
+    }
+}
+
+.options {
+    display: flex;
+    gap: 14px;
+}
+
+.options.end {
+    padding: 40px 0;
+    justify-content: flex-end;
+}
+
+@media only screen and (max-width: 1100px) {
+    .left #answer img {
+        width: 400px;
+    }
+
+    .right .question-list button div {
+        padding: 8px 0;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    h2 {
+        font-size: 24px !important;
+    }
+
+    h3 {
+        font-size: 18px !important;
+    }
+
+    button {
+        font-size: 12px !important;
+    }
+
+    body {
+        padding: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .left {
+        .modal-container {
+            padding: 0;
+            display: unset;
+
+            button {
+                padding: 0;
+                border-color: transparent;
+                background-color: transparent;
+
+                h3 {
+                    padding: 0;
+                }
+            }
+
+            .modal-dialog {
+                position: fixed;
+                margin: auto;
+                max-width: 320px;
+                height: 100%;
+		        transform: translate3d(0%, 0, 0);
+            }
+
+            .modal-content {
+                height: 100%;
+                overflow-y: auto;
+            }
+
+            .fade .modal-dialog {
+                left: -320px;
+                transition: opacity 0.3s linear, left 0.3s ease-out;
+            }
+            
+            .fade.in .modal-dialog {
+                left: 0;
+            }
+        }
+        
+        .time-sm {
+            padding-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            img {
+                height: fit-content;
+            }
+        }
+        
+        #question-img {
+            display: flex;
+            width: 100%;
+        }
+
+        #answer {
+            img {
+                width: 100px;
+            }
+        }
+
+        .options {
+            gap: 8px;
+            button  {
+                span {
+                    display: none;
+                }
+    
+                &.unsure, &#uncheck {
+                    padding: 0.6rem;
+                }
+            }
+
+            &.end {
+                padding: 1rem 0;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+    }
+
+    .right {
+        display: none;
+    }
+}
