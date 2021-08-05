@@ -57,7 +57,7 @@ $mustard: #FDD44B;
     border-color: $color;
 
     div.choice {
-        border-left-color: $color;
+        border-color: $color;
         background-color: $color;
         color: var(--base);
     }
@@ -101,12 +101,12 @@ body {
         text-align: justify;
         padding-bottom: 10px;
     }
-
+    
     #answer {
         label {
             padding-bottom: 10px;
         }
-
+        
         img {
             width: 500px;
         }
@@ -116,11 +116,11 @@ body {
         visibility: hidden;
         position: absolute;
     }
-
+    
     button.unsure {
         @include button($copped-red);
     }
-
+    
     button#uncheck {
         @include button($french-rose);
     }
@@ -134,6 +134,7 @@ body {
     }
 }
 
+
 .right {
     h3 {
         display: flex;
@@ -141,60 +142,60 @@ body {
         align-items: center;
         gap: 8px;
     }
-
+    
     img#question-img {
         width: 100%;
-    }
+    }  
+}
+
+.question-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 8px;
     
-    .question-list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    h3 {
+        display: flex;
+        align-items: center;
         gap: 8px;
-        
-        h3 {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            grid-column: span 5;
-      
-            img {
-                height: 50%;
-            }
+        grid-column: span 5;
+  
+        img {
+            height: 50%;
         }
+    }
 
-        button {
-            padding: 0;
-            border-radius: 12px;
-            display: flex;
-            border: 2px solid var(--white);
-            background-color: var(--base);
-            color: var(--white);
-            
-            div.choice {
-                border-left: 2px solid var(--white);
-            }
-
-            &:hover {
-                box-shadow: 0 0 16px var(--white);
-            }
-            
-            div {
-                width: 50%;
-                height: 100%;
-                padding: 12px 0;
-            }
-
-            &.unsure {
-                @include question-def($copped-red);
-            }
-
-            &.answered {
-                @include question-def($mustard);
-            }
-
-            &.show {
-                @include question-def(var(--white));
-            }
+    button {
+        padding: 0;
+        border-radius: 12px;
+        display: flex;
+        border: 2px solid var(--white);
+        background-color: var(--base);
+        color: var(--white);
+        
+        div.choice {
+            border-left: 2px solid var(--white);
+        }
+        
+        &:hover {
+            box-shadow: 0 0 16px var(--white);
+        }
+        
+        div {
+            width: 50%;
+            height: 100%;
+            padding: 12px 0;
+        }
+        
+        &.unsured {
+            @include question-def($copped-red);
+        }
+        
+        &.answered {
+            @include question-def($mustard);
+        }
+        
+        &.show {
+            @include question-def(var(--white));
         }
     }
 }
@@ -207,6 +208,69 @@ body {
 .options.end {
     padding: 40px 0;
     justify-content: flex-end;
+}
+
+.end-modal {
+    width: 100vw;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+
+    &.show {
+        z-index: 1050;
+    }
+
+    .modal-content {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 16px;
+        color: white;
+        background-color: var(--base);
+        
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -6px;
+            border-radius: 16px;
+            background-image: linear-gradient(to bottom, #4BF2FD, #BB5C7B);
+        }
+
+        .modal-header, .modal-body, .modal-footer {
+            width: 100%;
+            font-family: Montserrat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 0;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+
+            button {
+                width: fit-content;
+                border: 0;
+                border-radius: 10px;
+
+                &:nth-of-type(1) {
+                    background-color: var(--base);
+                }
+
+                &:nth-of-type(2) {
+                    color: var(--base);
+                    background-color: $electric-blue;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1100px) {
@@ -242,7 +306,7 @@ body {
             padding: 0;
             display: unset;
 
-            button {
+            .title {
                 padding: 0;
                 border-color: transparent;
                 background-color: transparent;
@@ -255,7 +319,8 @@ body {
             .modal-dialog {
                 position: fixed;
                 margin: auto;
-                max-width: 320px;
+                width: 80vw;
+                max-width: 500px;
                 height: 100%;
 		        transform: translate3d(0%, 0, 0);
             }
@@ -263,10 +328,39 @@ body {
             .modal-content {
                 height: 100%;
                 overflow-y: auto;
+                background-color: var(--base);
+            }
+
+            .modal-header {
+                padding: 1rem;
+                border: none;
+
+                .modal-title {
+                    padding: 0;
+                }
+
+                .close {
+                    padding: 0;
+                    width: fit-content;
+                    color: white;
+                    border: none;
+                    text-shadow: none;
+
+                    span {
+                        font-size: 2rem;
+                        font-weight: 300;
+                    }
+                }
+            }
+
+            .modal-body {
+                .question-list button div {
+                    padding: 6px 0;
+                }
             }
 
             .fade .modal-dialog {
-                left: -320px;
+                // left: -320px;
                 transition: opacity 0.3s linear, left 0.3s ease-out;
             }
             

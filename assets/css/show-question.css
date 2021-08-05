@@ -213,7 +213,7 @@ body {
   width: 100%;
 }
 
-.right .question-list {
+.question-list {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -221,7 +221,7 @@ body {
   gap: 8px;
 }
 
-.right .question-list h3 {
+.question-list h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -232,11 +232,11 @@ body {
   grid-column: span 5;
 }
 
-.right .question-list h3 img {
+.question-list h3 img {
   height: 50%;
 }
 
-.right .question-list button {
+.question-list button {
   padding: 0;
   border-radius: 12px;
   display: -webkit-box;
@@ -247,62 +247,62 @@ body {
   color: var(--white);
 }
 
-.right .question-list button div.choice {
+.question-list button div.choice {
   border-left: 2px solid var(--white);
 }
 
-.right .question-list button:hover {
+.question-list button:hover {
   -webkit-box-shadow: 0 0 16px var(--white);
           box-shadow: 0 0 16px var(--white);
 }
 
-.right .question-list button div {
+.question-list button div {
   width: 50%;
   height: 100%;
   padding: 12px 0;
 }
 
-.right .question-list button.unsure {
+.question-list button.unsured {
   border-color: #CC755A;
 }
 
-.right .question-list button.unsure div.choice {
-  border-left-color: #CC755A;
+.question-list button.unsured div.choice {
+  border-color: #CC755A;
   background-color: #CC755A;
   color: var(--base);
 }
 
-.right .question-list button.unsure:hover {
+.question-list button.unsured:hover {
   -webkit-box-shadow: 0 0 16px #CC755A;
           box-shadow: 0 0 16px #CC755A;
 }
 
-.right .question-list button.answered {
+.question-list button.answered {
   border-color: #FDD44B;
 }
 
-.right .question-list button.answered div.choice {
-  border-left-color: #FDD44B;
+.question-list button.answered div.choice {
+  border-color: #FDD44B;
   background-color: #FDD44B;
   color: var(--base);
 }
 
-.right .question-list button.answered:hover {
+.question-list button.answered:hover {
   -webkit-box-shadow: 0 0 16px #FDD44B;
           box-shadow: 0 0 16px #FDD44B;
 }
 
-.right .question-list button.show {
+.question-list button.show {
   border-color: var(--white);
 }
 
-.right .question-list button.show div.choice {
-  border-left-color: var(--white);
+.question-list button.show div.choice {
+  border-color: var(--white);
   background-color: var(--white);
   color: var(--base);
 }
 
-.right .question-list button.show:hover {
+.question-list button.show:hover {
   -webkit-box-shadow: 0 0 16px var(--white);
           box-shadow: 0 0 16px var(--white);
 }
@@ -319,6 +319,98 @@ body {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+
+.end-modal {
+  width: 100vw;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: -1;
+}
+
+.end-modal.show {
+  z-index: 1050;
+}
+
+.end-modal .modal-content {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 16px;
+  color: white;
+  background-color: var(--base);
+}
+
+.end-modal .modal-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  margin: -6px;
+  border-radius: 16px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#4BF2FD), to(#BB5C7B));
+  background-image: linear-gradient(to bottom, #4BF2FD, #BB5C7B);
+}
+
+.end-modal .modal-content .modal-header, .end-modal .modal-content .modal-body, .end-modal .modal-content .modal-footer {
+  width: 100%;
+  font-family: Montserrat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  border: 0;
+}
+
+.end-modal .modal-content .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  gap: 20px;
+}
+
+.end-modal .modal-content .modal-footer button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 0;
+  border-radius: 10px;
+}
+
+.end-modal .modal-content .modal-footer button:nth-of-type(1) {
+  background-color: var(--base);
+}
+
+.end-modal .modal-content .modal-footer button:nth-of-type(2) {
+  color: var(--base);
+  background-color: #4BF2FD;
 }
 
 @media only screen and (max-width: 1100px) {
@@ -349,18 +441,19 @@ body {
     padding: 0;
     display: unset;
   }
-  .left .modal-container button {
+  .left .modal-container .title {
     padding: 0;
     border-color: transparent;
     background-color: transparent;
   }
-  .left .modal-container button h3 {
+  .left .modal-container .title h3 {
     padding: 0;
   }
   .left .modal-container .modal-dialog {
     position: fixed;
     margin: auto;
-    max-width: 320px;
+    width: 80vw;
+    max-width: 500px;
     height: 100%;
     -webkit-transform: translate3d(0%, 0, 0);
             transform: translate3d(0%, 0, 0);
@@ -368,9 +461,32 @@ body {
   .left .modal-container .modal-content {
     height: 100%;
     overflow-y: auto;
+    background-color: var(--base);
+  }
+  .left .modal-container .modal-header {
+    padding: 1rem;
+    border: none;
+  }
+  .left .modal-container .modal-header .modal-title {
+    padding: 0;
+  }
+  .left .modal-container .modal-header .close {
+    padding: 0;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    color: white;
+    border: none;
+    text-shadow: none;
+  }
+  .left .modal-container .modal-header .close span {
+    font-size: 2rem;
+    font-weight: 300;
+  }
+  .left .modal-container .modal-body .question-list button div {
+    padding: 6px 0;
   }
   .left .modal-container .fade .modal-dialog {
-    left: -320px;
     -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
     transition: opacity 0.3s linear, left 0.3s ease-out;
   }
