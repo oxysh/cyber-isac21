@@ -28,7 +28,7 @@
         <div class="left">
             <div class="modal-container">
                 <button class="title" type="button" data-toggle="modal" data-target="#myModal">
-                    <h3><img src="assets/img/list.png" alt=""> Daftar Soal</h3>
+                    <h3><img src="assets/img/list.svg" alt=""> Daftar Soal</h3>
                 </button>
 
                 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -36,7 +36,7 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h3 class="modal-title" id="myModalLabel">
-                                    <img src="assets/img/list.png" alt=""> Daftar Soal
+                                    <img src="assets/img/list.svg" alt=""> Daftar Soal
                                 </h3>
                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                         aria-hidden="true">&times;</span></button>
@@ -250,10 +250,10 @@
                 </div>
             </div>
             <h3 class="time-sm">
-                <img src="assets/img/time.png" alt=""> Sisa Waktu :
+                <img src="assets/img/time.svg" alt=""> Sisa Waktu :
                 <span id="timer" data-countdown="{{ $time }}"></span>
             </h3>
-            <h2><img src="assets/img/number.png" class="img-fit"> Nomor {{ $no }}</h2>
+            <h2><img src="assets/img/number.svg" class="img-fit"> Nomor {{ $no }}</h2>
             <!-- <img src="{{ asset('img/packet/' . $currentQuestion->img) }}" alt="" id="question-img"> -->
             <img src="https://img.icons8.com/material-outlined/1000/ffffff/image.png" id="question-img" />
             <h3>
@@ -295,17 +295,17 @@
                 <div class="options">
                     <input type="checkbox" value="1" name="unsure">
                     <label for="unsure" class="unsure">
-                        <img src="assets/img/flag.png" alt=""><span> Saya ragu</span>
+                        <img src="assets/img/flag.svg" alt=""><span> Saya ragu</span>
                     </label>
-                    <button class="bubble" id="uncheck" onclick="uncheck">
-                        <img src="assets/img/reset.png" alt=""><span> Hapus pilihan</span>
+                    <button class="bubble" id="uncheck">
+                        <img src="assets/img/reset.svg" alt=""><span> Hapus pilihan</span>
                     </button>
                 </div>
                 <br>
                 <div class="options end">
-                    <button class="prev"><img src="assets/img/left.png" alt=""> Sebelum</button>
-                    <button class="next">Lanjut <img src="assets/img/right.png" alt=""></button>
-                    <button class="done" data-toggle="end-modal" data-target="#endModal"><img src="assets/img/done.png"
+                    <button class="prev"><img src="assets/img/left.svg" alt=""> Sebelum</button>
+                    <button class="next">Lanjut <img src="assets/img/right.svg" alt=""></button>
+                    <button class="done" data-toggle="end-modal" data-target="#endModal"><img src="assets/img/done.svg"
                             alt=""> Akhiri</button>
                 </div>
                 <div class="modal fade end-modal" id="endModal" tabindex="-1" role="dialog"
@@ -320,10 +320,10 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                                    <img src="assets/img/back.png" alt=""> Batal
+                                    <img src="assets/img/back.svg" alt=""> Batal
                                 </button>
                                 <button type="button" class="btn btn-primary">
-                                    <img src="assets/img/done.png" alt=""> Akhiri
+                                    <img src="assets/img/done.svg" alt=""> Akhiri
                                 </button>
                             </div>
                         </div>
@@ -334,13 +334,13 @@
         <div class="right">
             <div>
                 <h3>
-                    <img src="assets/img/time.png" alt=""> Sisa Waktu :
+                    <img src="assets/img/time.svg" alt=""> Sisa Waktu :
                     <span id="timer" data-countdown="{{ $time }}"></span>
                 </h3>
                 <!-- <img src="{{ asset('img/packet/' . $currentQuestion->img) }}" alt="" id="question-img"> -->
                 <img src="https://img.icons8.com/material-outlined/1000/ffffff/image.png" id="question-img" />
                 <div class="question-list">
-                    <h3><img src="assets/img/list.png" alt=""> Daftar Soal</h3>
+                    <h3><img src="assets/img/list.svg" alt=""> Daftar Soal</h3>
                     <button class="answered">
                         <div class="number">1</div>
                         <div class="choice">A</div>
@@ -569,6 +569,11 @@
             setTimeout(() => {
                 e.target.classList.remove('animate');
             }, 700);
+
+            var radioButton = document.querySelectorAll('#answer input');
+            for (i = 0; i < radioButton.length; i++) {
+                radioButton[i].checked = false;
+            }
         }
         function handleChild(e) {
             e.target.parentElement.classList.remove('animate');
@@ -578,11 +583,8 @@
             }, 700);
 
             var radioButton = document.querySelectorAll('#answer input');
-            console.log(radioButton)
             for (i = 0; i < radioButton.length; i++) {
-                console.log(radioButton[i])
                 radioButton[i].checked = false;
-                console.log(radioButton[i].checked)
             }
         }
 

@@ -115,7 +115,7 @@
 }
 
 .left #answer img {
-  width: 500px;
+  max-width: 500px;
 }
 
 .left input[name="unsure"] {
@@ -146,6 +146,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: 40px;
   color: var(--white);
   border: 0.125rem solid #CC755A;
   background-color: var(--base);
@@ -209,6 +210,7 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  height: 40px;
   color: var(--white);
   border: 0.125rem solid #F13E86;
   background-color: var(--base);
@@ -596,6 +598,15 @@
   background-color: #4BF2FD;
 }
 
+.modal-open {
+  overflow-y: scroll;
+  padding-right: 0 !important;
+}
+
+.modal-open::-webkit-scrollbar {
+  width: 10px;
+}
+
 .cp p {
   padding: 3rem;
   text-align: end;
@@ -706,7 +717,7 @@
     width: 100%;
   }
   .left #answer img {
-    width: 400px;
+    max-width: 400px;
   }
   .left .options {
     gap: 8px;
@@ -743,8 +754,7 @@
     padding: 1rem;
   }
   .left #answer img {
-    max-width: 100%;
-    width: 300px;
+    max-width: 300px;
   }
   .left h4 {
     font-size: 14px;
