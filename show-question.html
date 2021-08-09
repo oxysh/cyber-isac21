@@ -24,8 +24,8 @@
 </head>
 
 <body>
-    <div class="left">
-        <div>
+    <div class="grid">
+        <div class="left">
             <div class="modal-container">
                 <button class="title" type="button" data-toggle="modal" data-target="#myModal">
                     <h3><img src="assets/img/list.png" alt=""> Daftar Soal</h3>
@@ -265,40 +265,46 @@
             </h3>
             <form method="POST" id="form">
                 <div id="answer">
-                    <input type="radio" id="A" name="answer" value="A">
-                    <label for="A">
-                        <h4>A {{ $currentQuestion->A }}</h4>
-                    </label><br>
-                    <input type="radio" id="B" name="answer" value="B">
-                    <label for="B">
-                        <h4>B {{ $currentQuestion->B }}</h4>
-                    </label><br>
-                    <input type="radio" id="C" name="answer" value="C">
-                    <label for="C">
-                        <h4>C </h4>
-                    </label>
-                    <img src="https://img.icons8.com/material-outlined/500/ffffff/image.png" for="C"></img><br>
-                    <input type="radio" id="D" name="answer" value="D">
-                    <label for="D">
-                        <h4>D </h4>
-                    </label>
-                    <img src="https://img.icons8.com/material-outlined/500/ffffff/image.png" for="C"></img><br>
+                    <div>
+                        <input type="radio" id="A" name="answer" value="A">
+                        <label for="A">
+                            <h4>A {{ $currentQuestion->A }}</h4>
+                        </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="B" name="answer" value="B">
+                        <label for="B">
+                            <h4>B {{ $currentQuestion->B }}</h4>
+                        </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="C" name="answer" value="C">
+                        <label for="C">
+                            <h4>C </h4>
+                            <img src="https://img.icons8.com/material-outlined/500/ffffff/image.png" for="C"></img>
+                        </label><br>
+                    </div>
+                    <div>
+                        <input type="radio" id="D" name="answer" value="D">
+                        <label for="D">
+                            <h4>D </h4>
+                            <img src="https://img.icons8.com/material-outlined/500/ffffff/image.png" for="C"></img>
+                        </label><br>
+                    </div>
                 </div>
                 <div class="options">
-                    <button class="unsure">
-                        <input type="checkbox" value="1" name="unsure">
-                        <label for="unsure">
-                            <img src="assets/img/flag.png" alt=""><span> Saya ragu</span>
-                        </label>
-                    </button>
-                    <button id="uncheck" onclick="uncheck()">
+                    <input type="checkbox" value="1" name="unsure">
+                    <label for="unsure" class="unsure">
+                        <img src="assets/img/flag.png" alt=""><span> Saya ragu</span>
+                    </label>
+                    <button class="bubble" id="uncheck" onclick="uncheck">
                         <img src="assets/img/reset.png" alt=""><span> Hapus pilihan</span>
                     </button>
                 </div>
                 <br>
                 <div class="options end">
-                    <button class="move"><img src="assets/img/left.png" alt=""> Sebelumnya</button>
-                    <button class="move">Selanjutnya <img src="assets/img/right.png" alt=""></button>
+                    <button class="prev"><img src="assets/img/left.png" alt=""> Sebelum</button>
+                    <button class="next">Lanjut <img src="assets/img/right.png" alt=""></button>
                     <button class="done" data-toggle="end-modal" data-target="#endModal"><img src="assets/img/done.png"
                             alt=""> Akhiri</button>
                 </div>
@@ -325,222 +331,224 @@
                 </div>
             </form>
         </div>
-        <div>
-            <p>If you find any problems contact us : <br>
-                cp 1 +628119381391 <br>
-                cp 2 +628193193131</p>
+        <div class="right">
+            <div>
+                <h3>
+                    <img src="assets/img/time.png" alt=""> Sisa Waktu :
+                    <span id="timer" data-countdown="{{ $time }}"></span>
+                </h3>
+                <!-- <img src="{{ asset('img/packet/' . $currentQuestion->img) }}" alt="" id="question-img"> -->
+                <img src="https://img.icons8.com/material-outlined/1000/ffffff/image.png" id="question-img" />
+                <div class="question-list">
+                    <h3><img src="assets/img/list.png" alt=""> Daftar Soal</h3>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="answered">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="unsured">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button class="show">
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                    <button>
+                        <div class="number">1</div>
+                        <div class="choice">A</div>
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="right">
-        <h3>
-            <img src="assets/img/time.png" alt=""> Sisa Waktu :
-            <span id="timer" data-countdown="{{ $time }}"></span>
-        </h3>
-        <!-- <img src="{{ asset('img/packet/' . $currentQuestion->img) }}" alt="" id="question-img"> -->
-        <img src="https://img.icons8.com/material-outlined/1000/ffffff/image.png" id="question-img" />
-        <div class="question-list">
-            <h3><img src="assets/img/list.png" alt=""> Daftar Soal</h3>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="answered">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="unsured">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button class="show">
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-            <button>
-                <div class="number">1</div>
-                <div class="choice">A</div>
-            </button>
-        </div>
+    <div class="cp">
+        <p>If you find any problems, contact us : <br>
+            cp 1 +628119381391 <br>
+            cp 2 +628193193131</p>
     </div>
 
 
@@ -551,19 +559,50 @@
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
     <script>
+        // HAPUS PILIHAN
+        const bubble = document.getElementsByClassName('bubble')[0];
+        function handleClick(e) {
+            e.preventDefault();
+            e.target.classList.remove('animate');
+
+            e.target.classList.add('animate');
+            setTimeout(() => {
+                e.target.classList.remove('animate');
+            }, 700);
+        }
+        function handleChild(e) {
+            e.target.parentElement.classList.remove('animate');
+            e.target.parentElement.classList.add('animate');
+            setTimeout(() => {
+                e.target.parentElement.classList.remove('animate');
+            }, 700);
+
+            var radioButton = document.querySelectorAll('#answer input');
+            console.log(radioButton)
+            for (i = 0; i < radioButton.length; i++) {
+                console.log(radioButton[i])
+                radioButton[i].checked = false;
+                console.log(radioButton[i].checked)
+            }
+        }
+
+        bubble.addEventListener('click', handleClick, false);
+        $('.bubble span').click(handleChild)
+        $('.bubble img').click(handleChild)
+
+
+        // RAGU-RAGU
+        $('.unsure').click(e => {
+            e.preventDefault();
+            document.querySelector('.unsure').classList.toggle('toggle-unsure');
+        });
+
+        // MODAL SEBELUM AKHIRI
         $('.done').click(e => {
             e.preventDefault();
             $('#endModal').modal();
         });
 
-
-
-        function uncheck() {
-            var radioButton = document.getElementById("answer").childNodes;
-            for (i = 0; i < radioButton.length; i++) {
-                radioButton[i].checked = false;
-            }
-        }
         function update(action) {
             var el = document.getElementById('form');
             el.action = action;

@@ -1,31 +1,71 @@
+@-webkit-keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+@-webkit-keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%,  0% 0%,  0% 0%,  0% 0%,  0% 0%;
+  }
+}
+
 * {
   margin: 0 !important;
 }
 
-body {
+.grid {
   padding: 3rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1.5fr 1fr;
-      grid-template-columns: 1.5fr 1fr;
+  -ms-grid-columns: auto 500px;
+      grid-template-columns: auto 500px;
   gap: 4rem;
-}
-
-.left {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
 .left h2 {
   padding: 0%;
+  font-size: 36px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -41,14 +81,37 @@ body {
 
 .left h3 {
   width: 100%;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: 18px;
+  line-height: 30px;
   text-align: justify;
   padding-bottom: 10px;
 }
 
+.left h4 {
+  font-size: 16px;
+}
+
+.left #answer div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4px;
+}
+
 .left #answer label {
-  padding-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .left #answer img {
@@ -60,7 +123,12 @@ body {
   position: absolute;
 }
 
-.left button.unsure {
+.left input[name="unsure"]:checked + label:after {
+  -webkit-transform: scale(4.2);
+          transform: scale(4.2);
+}
+
+.left .unsure {
   cursor: pointer;
   padding: 0.5rem 1rem;
   font-weight: 600;
@@ -73,7 +141,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  overflow: hidden;
+  overflow: unset;
   border-radius: 12px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -84,7 +152,7 @@ body {
   z-index: 1;
 }
 
-.left button.unsure label {
+.left .unsure label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -94,9 +162,33 @@ body {
   gap: 8px;
 }
 
-.left button.unsure:hover {
+.left .unsure:hover {
   -webkit-box-shadow: 0 0 16px #CC755A;
           box-shadow: 0 0 16px #CC755A;
+}
+
+.left .unsure::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 0.3s ease-in;
+  transition: -webkit-transform 0.3s ease-in;
+  transition: transform 0.3s ease-in;
+  transition: transform 0.3s ease-in, -webkit-transform 0.3s ease-in;
+  mix-blend-mode: difference;
+  background: radial-gradient(circle at center, var(--base) 24%, #CC755A 25%, #CC755A 100%);
+}
+
+.left .unsure:active {
+  background-color: #CC755A;
+  top: 3px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .left button#uncheck {
@@ -112,7 +204,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   gap: 8px;
-  overflow: hidden;
+  overflow: unset;
   border-radius: 12px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -121,6 +213,14 @@ body {
   border: 0.125rem solid #F13E86;
   background-color: var(--base);
   z-index: 1;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  -webkit-transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
 }
 
 .left button#uncheck label {
@@ -138,11 +238,59 @@ body {
           box-shadow: 0 0 16px #F13E86;
 }
 
-.left .move {
+.left button#uncheck:before, .left button#uncheck:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  -webkit-transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.left button#uncheck:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, transparent 20%, #F13E86 20%, transparent 30%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F13E86 15%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.left button#uncheck:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, transparent 10%, #F13E86 15%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%), radial-gradient(circle, #F13E86 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.left button#uncheck:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  background-color: #ef2677;
+  -webkit-box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+          box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.left button#uncheck.animate:before {
+  display: block;
+  -webkit-animation: topBubbles ease-in-out 0.75s forwards;
+          animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.left button#uncheck.animate:after {
+  display: block;
+  -webkit-animation: bottomBubbles ease-in-out 0.75s forwards;
+          animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+.left .prev {
   cursor: pointer;
   padding: 0.5rem 1rem;
-  font-weight: 600;
-  font-size: 14px;
+  width: 135px !important;
+  font-weight: 500;
+  font-size: 18px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -150,7 +298,43 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  border-radius: 12px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: var(--white);
+  background-color: #414141;
+  z-index: 1;
+  border: none;
+}
+
+.left .prev:hover {
+  -webkit-box-shadow: 0 0 16px #414141;
+          box-shadow: 0 0 16px #414141;
+}
+
+.left .next {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  width: 135px !important;
+  font-weight: 500;
+  font-size: 18px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
   overflow: hidden;
   border-radius: 12px;
   width: -webkit-fit-content;
@@ -162,7 +346,7 @@ body {
   border: none;
 }
 
-.left .move:hover {
+.left .next:hover {
   -webkit-box-shadow: 0 0 16px var(--buttercup);
           box-shadow: 0 0 16px var(--buttercup);
 }
@@ -170,8 +354,9 @@ body {
 .left .done {
   cursor: pointer;
   padding: 0.5rem 1rem;
-  font-weight: 600;
-  font-size: 14px;
+  width: 135px !important;
+  font-weight: 500;
+  font-size: 18px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,7 +364,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 8px;
   overflow: hidden;
   border-radius: 12px;
   width: -webkit-fit-content;
@@ -197,12 +385,13 @@ body {
 }
 
 .right h3 {
+  font-size: 24px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -218,7 +407,7 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 8px;
+  gap: 18px;
 }
 
 .question-list h3 {
@@ -387,12 +576,6 @@ body {
 }
 
 .end-modal .modal-content .modal-footer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   gap: 20px;
 }
 
@@ -405,7 +588,7 @@ body {
 }
 
 .end-modal .modal-content .modal-footer button:nth-of-type(1) {
-  background-color: var(--base);
+  background-color: #414141;
 }
 
 .end-modal .modal-content .modal-footer button:nth-of-type(2) {
@@ -413,27 +596,17 @@ body {
   background-color: #4BF2FD;
 }
 
-@media only screen and (max-width: 1100px) {
-  .left #answer img {
-    width: 400px;
-  }
-  .right .question-list button div {
-    padding: 8px 0;
-  }
+.cp p {
+  padding: 3rem;
+  text-align: end;
 }
 
-@media only screen and (max-width: 768px) {
-  h2 {
-    font-size: 24px !important;
-  }
-  h3 {
-    font-size: 18px !important;
-  }
-  button {
-    font-size: 12px !important;
-  }
-  body {
-    padding: 1rem;
+.toggle-unsure {
+  background-color: #CC755A !important;
+}
+
+@media only screen and (max-width: 1100px) {
+  .grid {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
@@ -452,13 +625,13 @@ body {
   .left .modal-container .modal-dialog {
     position: fixed;
     margin: auto;
-    width: 80vw;
-    max-width: 500px;
     height: 100%;
     -webkit-transform: translate3d(0%, 0, 0);
             transform: translate3d(0%, 0, 0);
   }
   .left .modal-container .modal-content {
+    width: 100vw;
+    max-width: 532px;
     height: 100%;
     overflow-y: auto;
     background-color: var(--base);
@@ -483,6 +656,20 @@ body {
     font-size: 2rem;
     font-weight: 300;
   }
+  .left .modal-container .modal-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  .left .modal-container .modal-body .question-list {
+    width: 500px;
+  }
   .left .modal-container .modal-body .question-list button div {
     padding: 6px 0;
   }
@@ -492,6 +679,10 @@ body {
   }
   .left .modal-container .fade.in .modal-dialog {
     left: 0;
+  }
+  .left .prev, .left .next, .left .done {
+    font-size: 16px;
+    width: 120px !important;
   }
   .left .time-sm {
     padding-bottom: 16px;
@@ -515,29 +706,51 @@ body {
     width: 100%;
   }
   .left #answer img {
-    width: 100px;
+    width: 400px;
   }
   .left .options {
     gap: 8px;
   }
-  .left .options button span {
+  .left .options span {
     display: none;
   }
-  .left .options button.unsure, .left .options button#uncheck {
+  .left .options.unsure, .left .options#uncheck {
     padding: 0.6rem;
   }
   .left .options.end {
     padding: 1rem 0;
     -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
     -webkit-box-align: end;
         -ms-flex-align: end;
             align-items: flex-end;
   }
   .right {
     display: none;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  h2 {
+    font-size: 24px !important;
+  }
+  h3 {
+    font-size: 16px !important;
+  }
+  .grid {
+    padding: 1rem;
+  }
+  .left #answer img {
+    max-width: 100%;
+    width: 300px;
+  }
+  .left h4 {
+    font-size: 14px;
+  }
+  .cp p {
+    padding: 1rem;
   }
 }
 /*# sourceMappingURL=show-question.css.map */
