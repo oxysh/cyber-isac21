@@ -597,6 +597,12 @@
         $('.unsure').click(e => {
             e.preventDefault();
             document.querySelector('.unsure').classList.toggle('toggle-unsure');
+            if (document.querySelector('input[name="unsure"]').checked) {
+                document.querySelector('input[name="unsure"]').checked = false;
+            }
+            else {
+                document.querySelector('input[name="unsure"]').checked = true;
+            }
         });
 
         // MODAL SEBELUM AKHIRI
